@@ -97,7 +97,7 @@ label{
             <ul>          
               <li><a href="#">Trang chủ</a></li>
               <li><a href="index.php?act=listdm">Danh mục</a></li>
-              <li><a href="#">Hàng hóa</a></li>
+              <li><a href="index.php?act=listsp">Hàng hóa</a></li>
               <li><a href="#">Khách hàng</a></li>
               <li><a href="#">Bình luận</a></li>
               <li><a href="#">Đơn Hàng</a></li>

@@ -1,6 +1,7 @@
 <?php
  include "../model/pdo.php";
  include "../model/danhmuc.php";
+ include "../model/sanpham.php";
 
  include "header.php";
  if(isset($_GET['act'])){
@@ -42,6 +43,37 @@
             $listdanhmuc =  loadall_danhmuc();
             include "danhmuc/list.php";
             break;
+            //end controller danh mục
+            //bắt đầu sản phẩm
+        case 'addsp':
+            if(isset($_POST['themmoi']) && $_POST['themmoi']){
+                $iddm = $_POST['iddm'];
+                $tensp = $_POST['tensp'];
+                $giasp= $_POST['giasp'];
+                $mota= $_POST['mota'];
+                $hinh= $_FILES['hinh']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+
+                insert_sanpham($tensp,$giasp,$hinh,$mota,$iddm);
+                $thongbao = "Thêm thành công";
+            }
+            $listdanhmuc = loadall_danhmuc(); 
+            include "sanpham/add.php";
+            break;
+        case 'listsp':
+            if(isset($_POST['listok']) && $_POST['listok']){
+                $kyw=$_POST['kyw'];
+                $iddm=$_POST['iddm'];
+            }else{
+                $kyw = '';
+                $iddm = 0;
+            }
+            $listdanhmuc = loadall_danhmuc();
+            $listsanpham = loadall_sanpham($kyw,$iddm);
+            include "sanpham/list.php";
+            break;
+
 
         default:
             include "home.php";
