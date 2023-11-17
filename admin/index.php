@@ -73,7 +73,43 @@
             $listsanpham = loadall_sanpham($kyw,$iddm);
             include "sanpham/list.php";
             break;
+        case 'xoasp':
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                delete_sanpham($_GET['id']);
+            }
+            $listsanpham =  loadall_sanpham("",0);
+            include "sanpham/list.php";
+            break;
+        case 'suasp':
+           if(isset($_GET['idsp']) && ($_GET['idsp']>0)){
+                $sanpham = loadone_sanpham($_GET['idsp']);
+           } 
+           $listdanhmuc = loadall_danhmuc();
+           include "sanpham/update.php";
+            break;
+        case "updatesp":
+            if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                $id = $_POST['id']; 
+                $iddm = $_POST['iddm'];
+                $tensp = $_POST['tensp'];
+                $giasp = $_POST['giasp'];
+                $mota = $_POST['mota'];
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                    } else {
+                    //echo "Sorry, there was an error uploading your file.";
+                    }
+                    update_sanpham($id,$iddm,$tensp,$giasp,$mota,$hinh);
 
+                $thongbao = "cập nhật thành công";
+            }
+            $listdanhmuc =  loadall_danhmuc();
+            $listsanpham=   loadall_sanpham("",0);             
+            include "sanpham/list.php";
+            break;
 
         default:
             include "home.php";

@@ -16,4 +16,24 @@ function loadall_sanpham($kyw="",$iddm=0){
     $listsanpham =  pdo_query($sql);
     return $listsanpham;
 }
+function delete_sanpham(){
+    $sql = "DELETE FROM sanpham where id=".$_GET['id'];
+    pdo_execute($sql);
+}
+
+function loadone_sanpham($id){
+    $sql = "SELECT * from sanpham where id=".$id;
+    $sp = pdo_query_one($sql);
+    return $sp;
+}
+function update_sanpham($id,$iddm,$tensp,$giasp,$mota,$hinh){
+    if ($hinh!=""){
+        $sql = "UPDATE `sanpham` SET `name` = '{$tensp}', `price` ='{$giasp}',`mota`='{$mota}'
+        ,`img`='{$hinh}',`iddm` ='{$iddm}' where `sanpham`.`id`=$id";
+    }else{
+        $sql = "UPDATE `sanpham` SET `name` = '{$tensp}', `price` ='{$giasp}',`mota`='{$mota}'
+        ,`img`='{$hinh}',`iddm` ='{$iddm}' where `sanpham`.`id`=$id";
+    }
+    pdo_execute($sql);
+}
 ?>

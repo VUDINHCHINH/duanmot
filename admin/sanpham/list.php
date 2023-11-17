@@ -102,7 +102,7 @@ label{
           <h1>DANH SÁCH LOẠI HÀNG HÓA</h1>
          </div>
          <div class="row2 form_content ">
-          <form action="#" method="POST">
+          <form action="#" method="POST" enctype="multipart/form-data">
            <div class="row2 mb10 formds_loai">
            <form action="index.php?act=listsp" method="POST">    
                 <input type="text" name="kyw" id="">
@@ -148,8 +148,8 @@ label{
                 <td>'.$price.'</td>
                 <td>'.$mota.'</td>
                 <td>'.$luotxem.'</td>
-                <td><input type="button" value="Sửa">   <input type="button" value="Xóa"></td>
-            </tr>';
+                <td><a href="'.$suasp.'"><input type="button" value="Sửa"></a>  <a href="'.$xoasp.'"><input type="button" value="Xóa"></td></a>
+                    </tr>';
                 }
             ?>
            </table>

@@ -11,7 +11,7 @@
 <div class="container mt-5">
   <h2 class="mb-4">Thêm Sản Phẩm</h2>
 
-  <form action="" method="post" enctype="multipart/form-data">
+  <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="productName">Tên Sản Phẩm:</label>
       <input type="text" class="form-control" id="productName" name="tensp" placeholder="Nhập tên sản phẩm" required>
