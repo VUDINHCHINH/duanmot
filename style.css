@@ -488,10 +488,13 @@ ul li a:hover{
       
       margin-left: 50px;
       text-decoration: none;
-      color: red;
-      background-color: rgb(207, 109, 109);
+      color: rgb(232, 227, 227);
+      background-color: rgb(235, 0, 0);
       border: none;
      padding: 10px;
+    }
+    .product-continue #input:hover{
+      background-color: rgb(196, 39, 39);
     }
     .bill-one{
       padding-top: 30px;
@@ -696,7 +699,9 @@ ul li a:hover{
     color: #D9D9D9;
     border-radius: 10px;
   }
-  
+  .content-product{
+    margin-left: 34px;
+  }
   /* end code hieu */
 /* add css new */
 
