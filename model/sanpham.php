@@ -36,4 +36,29 @@ function update_sanpham($id,$iddm,$tensp,$giasp,$mota,$hinh){
     }
     pdo_execute($sql);
 }
+function load_ten_dm($iddm){
+    if($iddm>0){
+    $sql = "SELECT * from danhmuc where id=".$iddm;
+    $dm = pdo_query_one($sql);
+    extract($dm);
+    return $name;
+    }else{
+        return "";
+    }
+}
+function loadall_sanpham_banchay(){
+    $sql = "SELECT * FROM sanpham where 1 order by luotxem desc limit 0,8";
+    $listsanpham =  pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_new(){
+    $sql = "SELECT * FROM sanpham where 1 order by id desc limit 0,8";
+    $listsanpham =  pdo_query($sql);
+    return $listsanpham;
+}
+function load_sanpham_cungloai($id,$iddm){
+    $sql = "SELECT * from sanpham where iddm=".$iddm." AND id <>".$id;
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
 ?>

@@ -4,7 +4,7 @@
 }
 .container{
     box-sizing: border-box;
-    width: 1520px;
+    width: 1519px;
     margin: auto;
 }
 
@@ -46,6 +46,7 @@ ul li a:hover{
 .sanphambanchay-title{
     text-align: center;
     padding-bottom: 50px;
+    margin-top: 50px;
 }
 .sanphambanchay-product{
     width: 90%;
@@ -707,14 +708,10 @@ ul li a:hover{
 
 .boxleft{
   width: 25%;
-  
+  margin: 102px 0 0 10px;
 }
 .boxright{
-  width: 75%;
-
-}
-.mb{
-margin-bottom: 30px;
+  width: 78%;
 }
 .cata{
 display: flex;
@@ -722,7 +719,7 @@ gap: 30px;
 }
 .title{
 display: flex;
-background: rgba(165, 255, 105, 0.933);
+background-color:#D9D9D9;
 border-bottom-left-radius: 5px;
 border-top-right-radius: 5px;
 border-left: 1px solid #ccc;
@@ -777,4 +774,23 @@ padding:5px 10px;
 background-color:#ffff;
 border-radius:5px;
 border:1px #ccc solid;
+}
+
+.box_items {
+  float: left; /* hoặc sử dụng display: inline-block; */
+  margin-right: 20px; /* tùy chỉnh khoảng cách giữa các sản phẩm */
+  margin-left: 10px;
+  height: 360px;
+  width: 290px;
+  border-radius: 20px;
+  border: 1px solid rgb(193, 182, 182);
+}
+.clear {
+  clear: both;
+}
+.box_items img{
+  width: 280px;
+  height: 220px;
+  margin-top: 4px;
+  border-radius: 20px;
 }

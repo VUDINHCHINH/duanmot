@@ -1,41 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.1/dist/css/ionicons.min.css">
-</head>
-<body>
-    <div class="container">
-        <div class="wrapper">
-            <header>
-                <div class="inner-header">
-                    <a href="" class="logo">Chinhh</a>
-                    <nav>
-                        <ul id="main-menu">
-                            <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Sản phẩm</a></li>
-                            <li><a href="#">Khuyến mãi</a></li>
-                            <li><a href="#">Tin tức</a></li>
-                            <li><a href="#">Liên Hệ</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="giohang-taikhoan">
-                    <a href="#" class="icon"><ion-icon name="people-outline"></ion-icon></a>
-                    <div class="line-icon"></div>
-                    <a href="#" class="icon"><ion-icon name="bag-outline"></ion-icon></a>
-                </div>
-            </header>
+<!-- bắt đầu tin tức mới nhất -->
+<div class="tintucmoinhat-title">
+            <h2># Tin mới nhất</h2>
+            <p>Nơi cập nhật những xu hướng thời trang mới nhất cho bạn</p>
         </div>
-   <!-- code trong đây -->
-    
-   
 
+    <div class="tintucmoinhat">
+        <div class="tintucmoinhat-left">
+             <div class="tintucmoinhat-img">
+                <img src="img/3.png" alt="" width="580">
+             </div>
+             <div class="tintucmoinhat-content">
+                <h2>Giới trẻ Việt rộ mốt đi dép cá rô phi</h2>
+                <p>22/10/2019</p>
+                <div class="line"></div>
+                <p>Trào lưu của giới trẻ thường bất ngờ xuất hiện mà chẳng cần lý do. <br>
+                    Một bài hát, một câu nói, thậm chí một chiếc áo… cũng có thể trở <br>
+                    thành xu hướng. Mới đây, ảnh chụp đôi dép nhựa màu xanh,...</p>
+             </div>
+        </div>
 
-   <!-- end code trong đây -->
+        <div class="tintucmoinhat-right">
+            <div class="tintucmoinhat-right-top">
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="tintucmoinhat-right-bottom">
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hết tin tức mới nhất -->
     <!-- bắt đầu thương hiệu nổi tiếng -->
     <div class="thuonghieunoitieng">
         <div class="thuonghieunoitieng-title">

@@ -175,43 +175,25 @@
 </head>
 <body>
     <div class="container">
-        <div class="wrapper">
-            <header>
-                <div class="inner-header">
-                    <a href="" class="logo">Chinhh</a>
-                    <nav>
-                        <ul id="main-menu">
-                            <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Sản phẩm</a></li>
-                            <li><a href="#">Khuyến mãi</a></li>
-                            <li><a href="#">Tin tức</a></li>
-                            <li><a href="#">Liên Hệ</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="giohang-taikhoan">
-                    <a href="#" class="icon"><ion-icon name="people-outline"></ion-icon></a>
-                    <div class="line-icon"></div>
-                    <a href="#" class="icon"><ion-icon name="bag-outline"></ion-icon></a>
-                </div>
-            </header>
-            <div class="tark">
+        
+    <main>
+    <?php
+    extract($onesp);
+    ?>
+    <div class="tark">
                 <h2 class="tark-h2">CHI TIẾT SẢN PHẨM</h2>
             </div>
-        </div>
-    
-    <main>
-        
     <div class="sanphamct">
         <div class="sanphamct-img">
-            <img src="img/1.jpg" alt="">
+            <?php 
+            $img = $img_path.$img;
+            ?>
+            <img src="<?= $img ?>" alt="">
         </div>
         <div class="sanphamct-text">
-            <h2>Giày Thể Thao Nam Biti’s Hunter <br>
-                Core – Midnight Black Inverted <br>
-                DSMH01203DEN (Đen).</h2>
+            <h2><?= $mota ?></h2>
             <div class="line"></div>
-            <p class="price">999.999 VND</p>
+            <p class="price"><?= $price ?> VND</p>
             <div class="form-size">
                 <form>
                     <p>SIZE</p>
@@ -252,10 +234,7 @@
     <!-- end spct -->
     <div class="mota-spct">
         <h2>Mô tả :</h2>
-        <p>Giày Chạy Nike Air Zoom Pegasus 38 là một sự kết hợp hoàn hảo giữa <br>
-            phong cách và hiệu suất, được thiết kế để mang lại trải nghiệm chạy êm ái<br>
-            và linh hoạt. Với công nghệ tiên tiến và chất liệu độ bền, đây là sự lựa chọn<br>
-            tuyệt vời cho những người yêu thích hoạt động thể thao và chạy bộ.</p>
+        <p><?= $mota ?></p>
     </div>
     <!-- start bình luận sp -->
     <div class="form-blsp">
@@ -273,142 +252,35 @@
         </div>
         <div class="sanphamcungloai-product">
                 <div class="sanphamcungloai-product-top">
-                    <div class="content">
-                        <img src="img/1.jpg" alt="">
-                        <div class="sub">
-                            <h2>Iphone 14 promax 128GB</h2>
-                            <p>24.999.999 VND</p>
-                        </div>
-                        <div class="content-button">
-                            <button>Xem Chi Tiết</button>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <img src="img/1.jpg" alt="">
-                        <div class="sub">
-                            <h2>Iphone 14 promax 128GB</h2>
-                            <p>24.999.999 VND</p>
-                        </div>
-                        <div class="content-button">
-                            <button>Xem Chi Tiết</button>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <img src="img/1.jpg" alt="">
-                        <div class="sub">
-                            <h2>Iphone 14 promax 128GB</h2>
-                            <p>24.999.999 VND</p>
-                        </div>
-                        <div class="content-button">
-                            <button>Xem Chi Tiết</button>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <img src="img/1.jpg" alt="">
-                        <div class="sub">
-                            <h2>Iphone 14 promax 128GB</h2>
-                            <p>24.999.999 VND</p>
-                        </div>
-                        <div class="content-button">
-                            <button>Xem Chi Tiết</button>
-                        </div>
-                    </div>
-                </div>    
+                <?php
+                    $i = 0;
+                    foreach ($sp_cung_loai as $sp_cung_loai) {
+                        extract($sp_cung_loai);
+                        $hinh = $img_path.$img;
+                        $linksp = "index.php?act=sanphamct&idsp=" . $id;
+                    
+                        // Xác định biến $mr dựa trên chỉ số $i
+                        $mr = ($i % 4 == 1 || $i % 4 == 0) ? "" : "mr";
+                    
+                        echo '<div class="box_items ' . $mr . '">
+                                <img src="' . $hinh . '" alt="" width=200>
+                                <div class="sub">
+                                    <h2>' . $name . '</h2>
+                                    <p>' . $price . '</p>
+                                </div>
+                                <div class="content-button">
+                                    <a href="' . $linksp . '"><button>Xem Chi Tiết</button></a>
+                                </div>
+                                </div>';                                  
+                        $i += 1;                                                                     
+                        if ($i >= 8) {
+                            break; // Dừng vòng lặp sau khi đã hiển thị 8 sản phẩm
+                        }
+                    }                    
+                ?>            
+            </div>    
         </div>
  </div>
-    <!-- end sản phẩm cùng loại -->
-    <!-- bắt đầu thương hiệu nổi tiếng -->
-    <div class="thuonghieunoitieng">
-        <div class="thuonghieunoitieng-title">
-            <h2># Thương hiệu nổi tiếng</h2>
-            <p>Chúng tôi luôn đem đến khách hàng những thương hiệu hàng đầu thế giới</p>
-        </div>
-        <div class="thuonghieunoitieng-img">
-        <img src="img/thnt.png" alt="">
-        <img src="img/thnt.png" alt="">
-        <img src="img/thnt.png" alt="">
-        <img src="img/thnt.png" alt="">
-        <img src="img/thnt.png" alt="">
-        <img src="img/thnt.png" alt="">
-        </div>
-    </div>
-    <!-- end thương hiệu nổi tiếng -->
- 
-    <footer class="box_footer row mb demo">
-        <div id="footer">
-           <div class="footer-left">
-             <div class="footer-logo">
-               <img src="./img/3.png" alt="" />
-             </div>
-             <div class="card_1">
-               <h3>CÔNG TY ĐIỆN TỬ FPT SỐ 1 VIỆT NAM</h3>
-               <div>
-                 <i class="fa-sharp fa-solid fa-location-pin"></i>
-                 <p>
-                   Tầng 2 tòa nhà T10, Times City Vĩnh Tuy, Hai Bà Trưng, Hà Nội.
-                 </p>
-               </div>
-     
-               <div>
-                 <i class="fa-solid fa-phone-flip"></i>
-                 <p>1900.63.69.36</p>
-               </div>
-     
-               <div>
-                 <i class="fa-solid fa-envelope"></i>
-                 <p>info@tocotocotea.com</p>
-               </div>
-     
-               <p>Số ĐKKD: 0106341306. Ngày cấp: 16/03/2017.</p>
-               <p>Nơi cấp: Sở kế hoạch và Đầu tư Thành phố Hà Nội.</p>
-               <div class="icons">
-                 <i class="fa-brands fa-facebook"></i>
-                 <i class="fa-brands fa-square-instagram"></i>
-                 <i class="fa-brands fa-youtube"></i>
-                 <i class="fa-brands fa-square-twitter"></i>
-                 <i class="fa-brands fa-google-plus"></i>
-               </div>
-     
-               <div class="images">
-                 <div class="image">
-                   <img
-                     src="./img/1.jpg"
-                     alt=""
-                   />
-                 </div>
-                 <div class="image">
-                   <img src="./img/2.jpg" alt="" />
-                 </div>
-               </div>
-     
-               <div class="image_3 image">
-                 <img src="./img/3.png" alt="" />
-               </div>
-             </div>
-           </div>
-           <div class="footer-right">
-             <div class="card_2">
-               <h3>VỀ CHÚNG TÔI</h3>
-               <a href="#">Giới thiệu về TocoToco</a>
-               <a href="gioithieu.html">Nhượng quyền</a>
-               <a href="">Tin tức khuyến mại</a>
-               <a href="">Cửa hàng</a>
-               <a href="#">Quy định chung</a>
-               <a href="#">TT liên hệ &#038; ĐKKD</a>
-             </div>
-             <div class="card_3">
-               <h3>CHÍNH SÁCH</h3>
-               <a href="#">Chính sách thành viên</a>
-               <a href="#">Hình thức thanh toán</a>
-               <a href="#">Vận chuyển giao nhận</a>
-               <a href="#">Đổi trả và hoàn tiền</a>
-               <a href="#">Bảo vệ thông tin cá nhân</a>
-               <a href="#">Bảo trì, bảo hành</a>
-             </div>
-           </div>
-         </div>  
-         <!-- footer section ends -->
-       </footer>
 </div>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
